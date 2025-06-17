@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Ben Nevis",
+    "height": 1344.53,
+    "gridReference": "NN166712",
+    "category": "MUNRO"
+  },
+  {
+    "name": "Ben Macdui [Beinn Macduibh]",
+    "height": 1309.0,
+    "gridReference": "NN988989",
+    "category": "MUNRO"
+  },
+  {
+    "name": "Braeriach",
+    "height": 1296.0,
+    "gridReference": "NN953999",
+    "category": "MUNRO"
+  },
+  {
+    "name": "Cairn Toul",
+    "height": 1291.0,
+    "gridReference": "NN963972",
+    "category": "MUNRO"
+  },
+  {
+    "name": "Sgor an Lochain Uaine",
+    "height": 1258.0,
+    "gridReference": "NN954976",
+    "category": "MUNRO"
+  }
+]

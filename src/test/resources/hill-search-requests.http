@@ -1,0 +1,44 @@
+### Find all Munros and Tops
+GET http://localhost:8080/hills
+Accept: application/json
+
+
+### Find Tops
+GET http://localhost:8080/hills?category=Top
+Accept: application/json
+
+
+### Find Tops >= 1200 metres
+GET http://localhost:8080/hills?category=Top&minHeight=1200
+Accept: application/json
+
+
+### Find Munros <= 920 metres
+GET http://localhost:8080/hills?category=Munro&maxHeight=920
+Accept: application/json
+
+
+### Find all hills exactly 1000 metres high
+GET http://localhost:8080/hills?minHeight=1000&maxHeight=1000
+Accept: application/json
+
+
+### Find 5 highest Munros, ordered by height descending
+GET http://localhost:8080/hills?category=Munro&sort=height_desc&limit=5
+Accept: application/json
+
+
+### Find first 5 Munros in alphabetical order with identically named Munros ordered by height descending
+GET http://localhost:8080/hills?category=Munro&sort=name_asc&sort=height_desc&limit=5
+Accept: application/json
+
+
+### Find Tops >= 1200 metres, ordered by height descending
+GET http://localhost:8080/hills?category=Top&minHeight=1200&sort=height_desc
+Accept: application/json
+
+
+### Find Munros <= 920 metres, ordered by height ascending
+GET http://localhost:8080/hills?category=Munro&maxHeight=920&sort=height_asc
+Accept: application/json
+

@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Braeriach - Carn na Criche",
+    "height": 1265.0,
+    "gridReference": "NN939982",
+    "category": "TOP"
+  },
+  {
+    "name": "Ben Nevis - Carn Dearg NW Top (new GR)",
+    "height": 1221.0,
+    "gridReference": "NN159719",
+    "category": "TOP"
+  },
+  {
+    "name": "Cairn Gorm - Cairn Lochan",
+    "height": 1216.0,
+    "gridReference": "NH985025",
+    "category": "TOP"
+  },
+  {
+    "name": "Cairn Toul - Stob Coire an t-Saighdeir",
+    "height": 1213.0,
+    "gridReference": "NN962963",
+    "category": "TOP"
+  }
+]

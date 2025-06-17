@@ -1,0 +1,32 @@
+[
+  {
+    "name": "A' Bhuidheanach Bheag",
+    "height": 936.0,
+    "gridReference": "NN660775",
+    "category": "MUNRO"
+  },
+  {
+    "name": "A' Chailleach",
+    "height": 997.0,
+    "gridReference": "NH136714",
+    "category": "MUNRO"
+  },
+  {
+    "name": "A' Chailleach",
+    "height": 929.2,
+    "gridReference": "NH681041",
+    "category": "MUNRO"
+  },
+  {
+    "name": "A' Chraileag [A' Chralaig]",
+    "height": 1120.0,
+    "gridReference": "NH094147",
+    "category": "MUNRO"
+  },
+  {
+    "name": "A' Ghlas-bheinn",
+    "height": 918.0,
+    "gridReference": "NH008231",
+    "category": "MUNRO"
+  }
+]

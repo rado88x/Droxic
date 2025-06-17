@@ -1,0 +1,74 @@
+[
+  {
+    "name": "Beinn Teallach",
+    "height": 914.6,
+    "gridReference": "NN361859",
+    "category": "MUNRO"
+  },
+  {
+    "name": "Carn Aosda",
+    "height": 915.3,
+    "gridReference": "NO133791",
+    "category": "MUNRO"
+  },
+  {
+    "name": "Ben Vane",
+    "height": 915.76,
+    "gridReference": "NN277098",
+    "category": "MUNRO"
+  },
+  {
+    "name": "Beinn a' Chleibh",
+    "height": 916.3,
+    "gridReference": "NN250256",
+    "category": "MUNRO"
+  },
+  {
+    "name": "Geal-charn",
+    "height": 917.1,
+    "gridReference": "NN596782",
+    "category": "MUNRO"
+  },
+  {
+    "name": "Creag nan Damh",
+    "height": 918.0,
+    "gridReference": "NG983112",
+    "category": "MUNRO"
+  },
+  {
+    "name": "Meall na Teanga",
+    "height": 918.0,
+    "gridReference": "NN220924",
+    "category": "MUNRO"
+  },
+  {
+    "name": "A' Ghlas-bheinn",
+    "height": 918.0,
+    "gridReference": "NH008231",
+    "category": "MUNRO"
+  },
+  {
+    "name": "Sgurr a' Mhadaidh",
+    "height": 918.0,
+    "gridReference": "NG446235",
+    "category": "MUNRO"
+  },
+  {
+    "name": "Ruadh Stac Mor",
+    "height": 918.7,
+    "gridReference": "NH018756",
+    "category": "MUNRO"
+  },
+  {
+    "name": "Gairich",
+    "height": 919.0,
+    "gridReference": "NN025995",
+    "category": "MUNRO"
+  },
+  {
+    "name": "Sgiath Chuil",
+    "height": 920.0,
+    "gridReference": "NN462317",
+    "category": "MUNRO"
+  }
+]
