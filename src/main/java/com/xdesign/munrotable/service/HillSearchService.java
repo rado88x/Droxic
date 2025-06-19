@@ -27,6 +27,7 @@ import static com.xdesign.munrotable.util.CsvColumnHeading.HEIGHT_FIELD;
 import static com.xdesign.munrotable.util.CsvColumnHeading.NAME_FIELD;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
+//probably would make it @Service
 public final class HillSearchService {
 
     private static final EnumMap<SortField, Comparator<Hill>> FIELD_COMPARATORS = new EnumMap<>(SortField.class);
@@ -63,7 +64,11 @@ public final class HillSearchService {
             return false;
         }
         if (request.maxHeight() != null && hill.height() > request.maxHeight()) {
-            log.debug("Hill height = {} is higher than requested maximum height= {} height.", hill.height(), request.maxHeight());
+            log.debug("Hill height = {} is higher than requested maximum height= {}.", hill.height(), request.maxHeight());
+            return false;
+        }
+        if (request.name() != null && !hill.name().toLowerCase().contains(request.name().toLowerCase())) {
+            log.debug("Hill name = {} does not match requested name = {}.", hill.name(), request.name());
             return false;
         }
         return true;
@@ -81,6 +86,8 @@ public final class HillSearchService {
         return sort.order() == SortOrder.ASC ? comparator : comparator.reversed();
     }
 
+
+    //Probably can be extracted in DataLoader class to separate logic from Service layer
     private static List<Hill> loadHillsFromCsvFile(File file) {
         try (var csvReader = new CSVReaderHeaderAware(new FileReader(file, UTF_8))) {
 
