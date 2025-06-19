@@ -11,4 +11,5 @@ public interface HillSearchRequest {
     Double maxHeight();
     List<Sort> sorts();
     int limit();
+
 }

@@ -24,6 +24,8 @@ dependencies {
     implementation(libs.opencsv)
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+
+    developmentOnly("org.springframework.boot:spring-boot-devtools")
 }
 
 configurations.all {

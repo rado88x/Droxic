@@ -12,23 +12,25 @@ import static java.util.stream.Collectors.counting;
 import static java.util.stream.Collectors.groupingBy;
 import static org.apache.commons.lang3.StringUtils.isBlank;
 
+
+//@Component and inject it to service or controller for easier testing and decoupling IoC DI or keep it simple static?
 public final class HillSearchRequestFactory {
 
     private HillSearchRequestFactory() { /* Non-instantiable class */ }
 
     public static HillSearchRequest newRequest(
-        String category,
-        Double minHeight,
-        Double maxHeight,
-        List<String> sortCriteria,
-        int limit
-    ) {
+            String category,
+            Double minHeight,
+            Double maxHeight,
+            List<String> sortCriteria,
+            int limit,
+            String name) {
         Validate.isTrue(limit > 0, "Limit must be greater than zero; found [%d]", limit);
         validateHeightBracket(minHeight, maxHeight);
 
         var hillCategory = parseCategory(category);
         var sorts = createSorts(sortCriteria);
-        return new HillSearchRequestImpl(hillCategory, minHeight, maxHeight, sorts, limit);
+        return new HillSearchRequestImpl(hillCategory, minHeight, maxHeight, sorts, limit, name);
     }
 
     private static Hill.Category parseCategory(String categoryStr) {
@@ -50,16 +52,16 @@ public final class HillSearchRequestFactory {
         }
 
         var sorts = sortCriteria.stream()
-            .map(HillSearchRequestFactory::parseSort)
-            .toList();
+                .map(HillSearchRequestFactory::parseSort)
+                .toList();
 
         var duplicateSortFields = findDuplicateSortFields(sorts);
         if (!duplicateSortFields.isEmpty()) {
             var duplicateFields = duplicateSortFields.stream()
-                .map(SortField::toString)
-                .collect(Collectors.joining(", "));
+                    .map(SortField::toString)
+                    .collect(Collectors.joining(", "));
             throw new IllegalArgumentException("Duplicate sort criteria found for fields named [%s]".formatted(
-                duplicateFields));
+                    duplicateFields));
         }
 
         return sorts;
@@ -89,17 +91,17 @@ public final class HillSearchRequestFactory {
 
     private static List<SortField> findDuplicateSortFields(List<Sort> sorts) {
         return sorts.stream()
-            .collect(groupingBy(Sort::field, counting()))
-            .entrySet()
-            .stream()
-            .filter(entry -> entry.getValue() > 1)
-            .map(Map.Entry::getKey)
-            .toList();
+                .collect(groupingBy(Sort::field, counting()))
+                .entrySet()
+                .stream()
+                .filter(entry -> entry.getValue() > 1)
+                .map(Map.Entry::getKey)
+                .toList();
     }
 
     private static void validateHeightBracket(
-        Double minHeight,
-        Double maxHeight
+            Double minHeight,
+            Double maxHeight
     ) {
         if (minHeight != null && minHeight < 0) {
             throw new IllegalArgumentException("minHeight must be greater than zero; found [%.1f]".formatted(minHeight));
@@ -113,11 +115,13 @@ public final class HillSearchRequestFactory {
     }
 
     private record HillSearchRequestImpl(
-        Hill.Category category,
-        Double minHeight,
-        Double maxHeight,
-        List<Sort> sorts,
-        int limit
-    ) implements HillSearchRequest { }
+            Hill.Category category,
+            Double minHeight,
+            Double maxHeight,
+            List<Sort> sorts,
+            int limit,
+            String name
+    ) implements HillSearchRequest {
+    }
 
 }

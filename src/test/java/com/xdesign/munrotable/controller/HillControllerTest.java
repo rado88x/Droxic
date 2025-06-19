@@ -39,7 +39,7 @@ class HillControllerTest {
     }
 
     @Nested
-    @Disabled("Until filtering is implemented")
+//    @Disabled("Until filtering is implemented")
     class FilteringTest {
 
         @Test
@@ -80,7 +80,7 @@ class HillControllerTest {
     }
 
     @Nested
-    @Disabled("Until all steps implemented")
+//    @Disabled("Until all steps implemented")
     class AllParamsTest {
 
         @Test
